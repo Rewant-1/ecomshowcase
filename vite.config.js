@@ -4,9 +4,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  define: {
-    'process.env': process.env
-  },
+  // Removed unsafe define block. Add specific env variables if needed, e.g.:
+  // define: { 'process.env.MY_PUBLIC_VAR': JSON.stringify(process.env.MY_PUBLIC_VAR) },
   css: {
     postcss,
   },

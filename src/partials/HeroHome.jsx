@@ -45,12 +45,12 @@ function HeroHome() {
               </p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="/categories">
+                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0 transform hover:-translate-y-1 transition-transform duration-300 shadow-lg hover:shadow-xl" href="/categories">
                     Explore Categories
                   </a>
                 </div>
                 <div>
-                  <a className="btn text-white bg-gray-800 hover:bg-gray-700 w-full sm:w-auto sm:ml-4" href="#newsletter">
+                  <a className="btn text-white bg-gray-800 hover:bg-gray-700 w-full sm:w-auto sm:ml-4 transform hover:-translate-y-1 transition-transform duration-300 shadow-lg hover:shadow-xl" href="#newsletter">
                     Join Newsletter
                   </a>
                 </div>
@@ -60,7 +60,7 @@ function HeroHome() {
 
           {/* Hero image */}
           <div>
-            <div className="relative flex justify-center mb-8" data-aos="zoom-y-out" data-aos-delay="450">
+            <div className="relative flex justify-center mb-8 transform hover:scale-105 transition-transform duration-500" data-aos="zoom-y-out" data-aos-delay="450">
               <div className="flex flex-col justify-center">
                 <img className="mx-auto" src="/images.jpeg" width="768" height="432" alt="Hero" />
                 <svg
@@ -100,7 +100,7 @@ function HeroHome() {
                 </svg>
               </div>
               <button
-                className="absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg"
+                className="absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg hover:scale-105 transition-transform duration-300"
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
