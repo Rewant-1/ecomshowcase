@@ -7,7 +7,6 @@ import FeaturesHome from '../partials/Features';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
 import Newsletter from '../partials/Newsletter';
 import Footer from '../partials/Footer';
-import Banner from '../partials/Banner';
 
 function Home() {
   return (
@@ -27,8 +26,6 @@ function Home() {
         <Newsletter />
 
       </main>
-
-      <Banner />
 
       {/*  Site footer */}
       <Footer />

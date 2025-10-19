@@ -11,7 +11,11 @@ function FeaturedProducts() {
   }));
 
   return (
-    <section className="relative bg-gradient-to-b from-white to-gray-50">
+    <section className="relative bg-gradient-to-b from-white via-slate-50 to-blue-50 py-8 md:py-16">
+      {/* Subtle animated background orbs */}
+      <div className="absolute top-20 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000 pointer-events-none"></div>
+      
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
           
@@ -48,45 +52,48 @@ function FeaturedProducts() {
                   {section.products.map((product, productIndex) => (
                     <div 
                       key={product.id} 
-                      className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden"
+                      className="group relative bg-white/40 backdrop-blur-xl rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-white/60 hover:border-white/80"
                       data-aos="fade-up" 
                       data-aos-delay={200 + productIndex * 100}
                     >
+                      {/* Glow effect on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 via-transparent to-emerald-400/0 group-hover:from-blue-400/10 group-hover:to-emerald-400/10 transition-all duration-500 pointer-events-none"></div>
+                      
                       {/* Product image with overlay effect */}
-                      <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+                      <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
                         <img 
                           src={product.image} 
                           alt={product.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         
-                        {/* Floating price tag */}
-                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur text-blue-600 font-bold px-3 py-1 rounded-full text-sm shadow-lg">
+                        {/* Floating price tag with glass effect */}
+                        <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-md border border-white/50 text-blue-600 font-bold px-3 py-1 rounded-full text-sm shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                           {product.price}
                         </div>
                       </div>
                       
                       {/* Product details */}
-                      <div className="p-6">
-                        <h4 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <div className="p-6 relative z-10">
+                        <h4 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                           {product.name}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
                         
                         {/* Showcase badge */}
-                        <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
-                          <span className="inline-flex items-center text-xs font-medium bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-full">
+                        <div className="mt-4 pt-4 border-t border-white/40 flex items-center justify-between">
+                          <span className="inline-flex items-center text-xs font-medium bg-gradient-to-r from-blue-50 to-emerald-50 text-blue-700 px-2.5 py-0.5 rounded-full border border-blue-200/50">
                             <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
-                            Featured
+                            Premium
                           </span>
                           <Link 
                             to={`/categories/${section.slug}`}
-                            className="text-xs text-gray-500 hover:text-blue-600 transition-colors"
+                            className="text-xs text-gray-600 hover:text-blue-600 transition-colors font-medium"
                           >
-                            More Details →
+                            View →
                           </Link>
                         </div>
                       </div>
