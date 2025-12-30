@@ -146,7 +146,7 @@ function Footer() {
           </ul>
 
           {/* Copyrights note */}
-          <div className="text-sm text-gray-600 mr-4">© {new Date().getFullYear()} Stellar Precision. All rights reserved.</div>
+          <div className="text-sm text-gray-600 mr-4">Demo showcase (template customization). Content is for presentation only.</div>
 
         </div>
 
